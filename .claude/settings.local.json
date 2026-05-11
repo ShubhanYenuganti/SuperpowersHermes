@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jq --version)",
+      "Bash(python3 -m json.tool)",
+      "Read(//Users/shubhan/.claude/**)",
+      "Bash(tmux list-windows *)",
+      "Bash(tmux source-file *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); hooks=d.get\\('hooks',{}\\); [print\\(k,'→',v\\) for k,v in hooks.items\\(\\)]\")",
+      "Bash(tmux kill-window *)",
+      "Bash(claude --version)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); hooks=d.get\\('hooks',{}\\); print\\(json.dumps\\(hooks, indent=2\\)\\)\")",
+      "Bash(rm -f /tmp/agent-prompt-XXXXXX.txt /tmp/agent-XXXXXX.log)",
+      "Read(//private/tmp/**)"
+    ]
+  }
+}
