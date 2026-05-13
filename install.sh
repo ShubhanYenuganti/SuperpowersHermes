@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 set -e
 HERMES_DIR="${HERMES_HOME:-$HOME/.hermes}"
-mkdir -p "$HERMES_DIR/skills" "$HERMES_DIR/tools"
+mkdir -p "$HERMES_DIR/skills"
 
 cp -r skills/superpowers "$HERMES_DIR/skills/"
 echo "✓ Installed skills → $HERMES_DIR/skills/superpowers/"
 
-cp tools/superpowers.py "$HERMES_DIR/tools/"
-echo "✓ Installed toolset → $HERMES_DIR/tools/superpowers.py"
+mkdir -p "$HERMES_DIR/plugins"
+cp -r plugin "$HERMES_DIR/plugins/superpowers"
+echo "✓ Installed plugin → $HERMES_DIR/plugins/superpowers/"
 
 echo ""
-echo "Run: hermes tools --enable superpowers"
+echo "Run: hermes plugins enable superpowers"

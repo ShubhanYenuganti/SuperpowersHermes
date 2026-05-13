@@ -12,7 +12,7 @@ A port of the [Superpowers](https://github.com/obra/superpowers) software develo
 git clone https://github.com/yourusername/superpowers-hermes
 cd superpowers-hermes
 ./install.sh
-hermes tools --enable superpowers
+hermes plugins enable superpowers
 ```
 
 ## Acceptance Test
