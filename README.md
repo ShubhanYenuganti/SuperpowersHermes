@@ -15,6 +15,40 @@ cd superpowers-hermes
 hermes plugins enable superpowers
 ```
 
+## Activating in a Hermes Agent
+
+`hermes plugins enable superpowers` registers the plugin but does **not** automatically inject the skills. Each skill has `requires_toolsets: [superpowers]` in its frontmatter, so the `superpowers` toolset must be active in the session for skills to trigger.
+
+**One-off session (CLI):**
+```bash
+hermes chat --toolsets superpowers
+```
+
+**All CLI sessions (permanent):**
+
+Add `superpowers` to the `toolsets` list in `~/.hermes/config.yaml`:
+```yaml
+toolsets:
+- hermes-cli
+- superpowers
+```
+
+**Specific platform agent (e.g., Discord, Telegram):**
+
+Add `superpowers` to that platform's entry in `platform_toolsets` in `~/.hermes/config.yaml`:
+```yaml
+platform_toolsets:
+  discord:
+  - hermes-discord
+  - superpowers
+```
+
+**Verify activation:**
+```bash
+hermes chat --toolsets superpowers -q "Which superpowers skills are available?"
+```
+The agent should list all 14 skills from the `skills/superpowers/` directory.
+
 ## Acceptance Test
 
 In a Hermes session, send: **"Let's make a React todo list"**
