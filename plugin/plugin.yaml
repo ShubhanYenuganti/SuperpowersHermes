@@ -1,0 +1,3 @@
+name: superpowers
+version: 5.1.0
+description: "Superpowers methodology skills — structured workflows for planning, TDD, debugging, code review, and subagent orchestration (ported from Jesse Vincent's superpowers v5.1.0)"
